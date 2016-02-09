@@ -79,10 +79,32 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uuC-jr-iqC" appends="YES" id="9YI-2p-pCs"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="currentPlayerLabel" destination="2A2-6e-RAX" id="1N9-6D-edH"/>
+                        <outlet property="label1" destination="3df-nc-jkq" id="E9C-zO-KWA"/>
+                        <outlet property="label10" destination="2A2-6e-RAX" id="BXw-oo-i54"/>
+                        <outlet property="label2" destination="LgD-fO-Lnk" id="2CV-f3-DIO"/>
+                        <outlet property="label3" destination="Jn5-BE-0WS" id="i9B-kg-dKo"/>
+                        <outlet property="label4" destination="VQW-mT-eXh" id="kEK-1j-cto"/>
+                        <outlet property="label5" destination="C59-eP-meE" id="Bez-zD-y5h"/>
+                        <outlet property="label6" destination="DaH-A1-L8A" id="HRA-XT-bU3"/>
+                        <outlet property="label7" destination="ptd-5P-nxE" id="gkb-FW-0qU"/>
+                        <outlet property="label8" destination="LD1-7I-JTo" id="EbU-sZ-xwj"/>
+                        <outlet property="label9" destination="eMv-jn-rpc" id="0KJ-R9-Jzf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uuC-jr-iqC">
+                    <connections>
+                        <action selector="whenTapped:" destination="BYZ-38-t0r" id="RSQ-LO-kAr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="305" y="349"/>
         </scene>
