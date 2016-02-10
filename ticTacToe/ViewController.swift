@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     let playerSymbol = "XO"
     var counter = 0
     var currentPlayer:Character!
+    var moveCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
             if CGRectContainsPoint(label.frame, selectedPoint)
             {
                 label.text = String(currentPlayer)
+                moveCounter++
             }
         }
         
@@ -62,6 +64,10 @@ class ViewController: UIViewController {
         getCurrentPlayer()
     }
 //}
+    func checkIfBoardIsFull
+    {
+        
+    }
     
     func getCurrentPlayer() {
         let myRange = Range<String.Index>(start: playerSymbol.startIndex.advancedBy(counter), end:
@@ -71,21 +77,105 @@ class ViewController: UIViewController {
     
 }
     
-   // func reset()
-    //{
-      //  counter = 0
+   func reset()
+    {
+        counter = 0
         //let alert = UIAlertController(title: "Reseting Counter", message: "Hi", preferredStyle: UIAlertControllerStyle.Alert)
         //let okayAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: clearLabels)
         //alert.addAction(okayAction)
         //presentViewController(alert, animated: true, completion: nil)
-    /}
+    }
     
     //func clearLabels(Action: UIAlertAction)
-    /{
+    //{
       //  label1.text = ""
        // label2.text = ""
         //label3.text = ""
         
     //}
+    
+    func checkForWinner()
+        
+    {
+        
+        if label1.text == label2.text && label2.text == label3.text && label3.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label3.text!)")
+            
+        }
+            
+        else if label4.text == label5.text && label5.text == label6.text && label6.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label6.text!)")
+            
+        }
+            
+        else if label7.text == label8.text && label8.text == label9.text && label9.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label9.text!)")
+            
+        }
+            
+        else if label1.text == label4.text && label4.text == label7.text && label7.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label7.text!)")
+            
+        }
+            
+        else if label2.text == label5.text && label5.text == label8.text && label8.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label8.text!)")
+            
+        }
+            
+        else if label3.text == label6.text && label6.text == label9.text && label9.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label9.text!)")
+            
+        }
+            
+        else if label1.text == label5.text && label5.text == label9.text && label9.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label9.text!)")
+            
+        }
+            
+        else if label3.text == label5.text && label5.text == label7.text && label7.text != ""
+            
+        {
+            
+            presentWinningAlert("\(label7.text!)")
+            
+        }
+        
+        
+        
+        if moveCounter == 9
+            
+        {
+            
+            presentWinningAlert("No One")
+            
+        }
+        
+    }
+    func presentWinningAlert(x: String)
+    {
+        
+    }
 }
 
