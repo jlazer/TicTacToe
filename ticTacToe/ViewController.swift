@@ -41,7 +41,6 @@ class ViewController: UIViewController {
         labelArray.append(label8)
         labelArray.append(label9)
         
-        
     }
     
     @IBAction func whenTapped(sender: UITapGestureRecognizer) {
@@ -53,6 +52,7 @@ class ViewController: UIViewController {
             {
                 label.text = String(currentPlayer)
                 moveCounter++
+                print(moveCounter)
             }
         }
         
@@ -62,12 +62,15 @@ class ViewController: UIViewController {
             reset()
         }
         getCurrentPlayer()
+        checkForWinner()
     }
 //}
-    func checkIfBoardIsFull
-    {
-        
-    }
+    //func checkIfBoardIsFull
+    //{
+      //  label1.text = "X"
+        //label2.text = "O"
+        //labelArray.
+    //}
     
     func getCurrentPlayer() {
         let myRange = Range<String.Index>(start: playerSymbol.startIndex.advancedBy(counter), end:
@@ -175,7 +178,7 @@ class ViewController: UIViewController {
     }
     func presentWinningAlert(x: String)
     {
-        
+        var alert = UIAlertController(title: "Winner!", message: "Congratulations", preferredStyle: UIAlertControllerStyle
     }
 }
 
