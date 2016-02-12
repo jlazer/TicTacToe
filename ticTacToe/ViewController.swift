@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var label7: UILabel!
     @IBOutlet weak var label8: UILabel!
     @IBOutlet weak var label9: UILabel!
-    @IBOutlet weak var label10: UILabel!
     @IBOutlet weak var currentPlayerLabel: UILabel!
     
     var labelArray = [UILabel]()
@@ -40,6 +39,7 @@ class ViewController: UIViewController {
         labelArray.append(label7)
         labelArray.append(label8)
         labelArray.append(label9)
+        getCurrentPlayer()
         
     }
     
@@ -53,9 +53,9 @@ class ViewController: UIViewController {
                 label.text = String(currentPlayer)
                 moveCounter++
                 print(moveCounter)
+               
             }
         }
-        
         counter++
         if counter == 2
         {
@@ -64,13 +64,6 @@ class ViewController: UIViewController {
         getCurrentPlayer()
         checkForWinner()
     }
-//}
-    //func checkIfBoardIsFull
-    //{
-      //  label1.text = "X"
-        //label2.text = "O"
-        //labelArray.
-    //}
     
     func getCurrentPlayer() {
         let myRange = Range<String.Index>(start: playerSymbol.startIndex.advancedBy(counter), end:
@@ -83,19 +76,20 @@ class ViewController: UIViewController {
    func reset()
     {
         counter = 0
-        //let alert = UIAlertController(title: "Reseting Counter", message: "Hi", preferredStyle: UIAlertControllerStyle.Alert)
-        //let okayAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: clearLabels)
-        //alert.addAction(okayAction)
-        //presentViewController(alert, animated: true, completion: nil)
     }
-    
-    //func clearLabels(Action: UIAlertAction)
-    //{
-      //  label1.text = ""
-       // label2.text = ""
-        //label3.text = ""
-        
-    //}
+    func clearLabels(Action: UIAlertAction)
+    {
+        label1.text = ""
+        label2.text = ""
+        label3.text = ""
+        label4.text = ""
+        label5.text = ""
+        label6.text = ""
+        label7.text = ""
+        label8.text = ""
+        label9.text = ""
+        moveCounter = 0
+    }
     
     func checkForWinner()
         
@@ -176,9 +170,13 @@ class ViewController: UIViewController {
         }
         
     }
-    func presentWinningAlert(x: String)
+    func presentWinningAlert(winner: String)
     {
-        var alert = UIAlertController(title: "Winner!", message: "Congratulations", preferredStyle: UIAlertControllerStyle
+        
+        let alert = UIAlertController(title: "\(winner) wins!", message: "Reseting Board.", preferredStyle: UIAlertControllerStyle.Alert)
+        let okayAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: clearLabels)
+        alert.addAction(okayAction)
+        presentViewController(alert, animated: true, completion: nil)
     }
 }
 
