@@ -63,6 +63,7 @@ class ViewController: UIViewController {
         }
         getCurrentPlayer()
         checkForWinner()
+    
     }
     
     func getCurrentPlayer() {
